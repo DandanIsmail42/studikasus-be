@@ -13,3 +13,6 @@ module.exports = {
     dbPass: process.env.DB_PASS,
     dbName: process.env.DB_NAME,
 }
+
+
+// SET DEBUG=dandan-server:* && 

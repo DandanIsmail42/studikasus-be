@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "SET DEBUG=dandan-server:* && node ./bin/www"
+    "start": "node ./bin/www"
   },
   "dependencies": {
     "@casl/ability": "^6.2.0",
@@ -25,3 +25,4 @@
     "pug": "2.0.0-beta11"
   }
 }
+
