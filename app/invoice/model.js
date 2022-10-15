@@ -23,6 +23,11 @@ const invoiceSchema = Schema({
         type: Number,
         required: [true, 'Total wajib diisi']
     },
+    payment_status: {
+        type: String,
+        enum: ['waiting_payment', 'paid'],
+        default: 'waiting_payment'
+    },
    user: {
     type: Schema.Types.ObjectId,
     ref: 'User'
