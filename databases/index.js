@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
-const {dbHost, dbPass, dbName, dbPort, dbUser} = require('../app/config');
+const {dbHost, dbPass, dbName, dbUser} = require('../app/config');
 
 const database = 
-        process.env.MONGO_URI || `mongodb://${dbUser}:${dbPass}@${dbHost}:${dbPort}/${dbName}?authSource=admin`;
+        process.env.MONGO_URI || `mongodb+srv://${dbUser}:${dbPass}@${dbHost}/${dbName}?authSource=admin`;
 
 
 
