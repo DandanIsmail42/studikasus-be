@@ -24,18 +24,11 @@ app.set('view engine', 'pug');
 
 
 app.use(cors());
-app.use((req,res, next)=>{
-  res.header('Access-Control-Allow-Origin','*');
-  res.header(
-      'Access-Control-Allow-Headers','Origin ,X-Requested-With,Content-Type, Access,Authorization'
-  );
-
-  if(req.Method==='OPTIONS'){
-      req.header('Access-Control-Allow-Methods','POST,PUT,PUSH,PATCH,DELETE,GET');
-      return res.status(200).json({})
-  }
-
-  next()
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  next();
 })
 app.use(logger('dev'));
 app.use(express.json());
@@ -43,6 +36,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(decodeToken());
+
+
 
 app.use('/auth', authRoute);
 app.use('/api', productRoute);
