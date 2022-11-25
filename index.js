@@ -7,7 +7,7 @@
  var app = require('./app');
  var debug = require('debug')('dandan-server:server');
  var http = require('http');
- const db = require('../databases')
+ const db = require('./databases')
  /**
   * Get port from environment and store in Express.
   */
